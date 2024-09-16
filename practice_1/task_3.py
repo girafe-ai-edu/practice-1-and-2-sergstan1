@@ -5,9 +5,17 @@ BMI) человека. Пользователь должен ввести сво
 используете одну из приведенных ниже формул для определения индекса.
 BMI = вес/рост**2 
 """
-weight = input()
-height = input()
+
+import typing as tp
 
 
-#Ваш кол
+def find_bmi() -> tp.Optional[float]:
+    height = int(input())
+    weight = int(input())
+    if height == 0:
+        print('Can not compute BMI')
+        return None
+    return weight / height**2
 
+
+print(find_bmi())
